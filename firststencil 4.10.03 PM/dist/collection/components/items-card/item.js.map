@@ -1,0 +1,1 @@
+{"version":3,"file":"item.js","sourceRoot":"","sources":["../../../src/components/items-card/item.tsx"],"names":[],"mappings":"","sourcesContent":["export interface Item {\n    id: string;\n  label: string;\n  price: {\n    amount: number;\n    currency: string;\n  };\n  qty: number;\n  thumbnail: string;\n    }\n"]}

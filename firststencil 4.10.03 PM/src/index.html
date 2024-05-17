@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/firststencil.esm.js"></script>
+    <script nomodule src="/build/firststencil.js"></script>
+  </head>
+  <body>
+    <!-- <ey-side-drawer items='[
+  {
+    "id": "1",
+    "label": "Item 1",
+    "price": {
+      "amount": 10,
+      "currency": "USD"
+    },
+    "qty": 2,
+    "thumbnail": "https://example.com/item1.jpg"
+  },
+  {
+    "id": "2",
+    "label": "Item 2",
+    "price": {
+      "amount": 20,
+      "currency": "USD"
+    },
+    "qty": 1,
+    "thumbnail": "https://example.com/item2.jpg"
+  }
+]'></ey-side-drawer> -->
+
+    <ey-items-card
+      array-data='[
+{
+  "id": "001",
+  "label": "JBL QuietComfort 45 wireless bluetooth headphones",
+  "thumbnail": "https://cdn.salla.sa/oRmZv/bi7pdht4SRGPLmziP5fDcuFyuDOwz4FypJ5svKxU.jpg",
+  "qty": 1,
+  "price": {        
+    "currency": "SAR",
+    "amount": 1500
+  }      
+},
+{
+  "id": "002",
+  "label": "JBL Active Noise Cancelling Headphones",
+  "thumbnail": "https://cdn.salla.sa/oRmZv/9wgo7gyYLL6WsYwugU1zZEn3nypaI93MDCPiPhI5.png",
+  "qty": 1,
+  "price": {        
+    "currency": "SAR",
+    "amount": 750
+  }     
+},
+{
+  "id": "003",
+  "label": "JBL AirPods Max - Sky Blue",
+  "thumbnail": "https://cdn.salla.sa/oRmZv/ntqWnEYORNd9I37LmsBNb7A0DnSx3kTd9Sa64lKZ.jpg",
+  "qty": 1,
+  "price": {        
+    "currency": "SAR",
+    "amount": 1650
+  }      
+}
+]'
+    ></ey-items-card>
+  </body>
+</html>
