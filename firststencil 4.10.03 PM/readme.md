@@ -1,3 +1,128 @@
+# ey-items-card Component
+
+The ey-items-card component is a Stencil web component designed to display a list of items in a card format. Each item includes a thumbnail image, label, price, and quantity. This component is flexible, allowing the input data to be provided either as an array of objects or a JSON string.
+
+## Table of Contents
+
+- Properties
+- Watchers
+- Lifecycle Methods
+- Rendering
+- Example Usage
+- Item Interface
+- Styling
+- Additional Information
+
+## Properties
+
+### arrayData
+
+- Type: Item[] | string
+- **Description** : The data source for the component. It can be either an array of Item objects or a JSON string representing the array of Item objects.
+
+## Watchers
+
+### arrayDataWatcher
+
+- **Description** : This watcher method is triggered whenever the arrayData property changes. It checks the type of the new value and, if it is a JSON string, parses it into an array of Item objects and assigns it to the private _arrayData property. If it is already an array of Item objects, it directly assigns it to _arrayData.
+
+## Lifecycle Methods
+
+### componentWillLoad
+
+- **Description** : This lifecycle method is called just before the component is rendered. It ensures the arrayData is correctly parsed and assigned by calling the arrayDataWatcher method.
+
+## Rendering
+
+The render method generates the HTML structure for the component. Each item in the _arrayData array is displayed with its thumbnail, label, price, and quantity.
+
+### HTML Structure
+
+- **Container** : The outermost div has several CSS classes for styling, including padding, background color, and border.
+
+- **Item** : Each item is wrapped in a div with padding. It includes:
+ - **Thumbnail** : An (img) element displaying the item's thumbnail image.
+ - **Details** :  A (div) containing the item's label and price.
+ - **Quantity and Total Price** : A (div) displaying the item's quantity and total price (calculated as quantity multiplied by price).
+
+## Styling
+
+The component uses Tailwind CSS classes for styling, including spacing, colors, font styles, and more.
+
+## Example Usage
+
+```
+ <ey-items-card
+      array-data='[
+{
+  "id": "001",
+  "label": "JBL QuietComfort 45 wireless bluetooth headphones",
+  "thumbnail": "https://cdn.salla.sa/oRmZv/bi7pdht4SRGPLmziP5fDcuFyuDOwz4FypJ5svKxU.jpg",
+  "qty": 1,
+  "price": {        
+    "currency": "SAR",
+    "amount": 1500
+  }      
+},
+{
+  "id": "002",
+  "label": "JBL Active Noise Cancelling Headphones",
+  "thumbnail": "https://cdn.salla.sa/oRmZv/9wgo7gyYLL6WsYwugU1zZEn3nypaI93MDCPiPhI5.png",
+  "qty": 1,
+  "price": {        
+    "currency": "SAR",
+    "amount": 750
+  }     
+},
+]'
+    ></ey-items-card>
+
+```
+
+## Item Interface
+
+```
+export interface Item {
+    id: string;
+  label: string;
+  price: {
+    amount: number;
+    currency: string;
+  };
+  qty: number;
+  thumbnail: string;
+    }
+```
+
+## Styling
+
+To customize the styles, you can modify the items-card.css file or adjust the Tailwind CSS classes used in the render method.
+
+## Additional Information
+
+For more details on using Stencil components, refer to the [Stencil documentation](https://stenciljs.com/docs/introduction). This will provide you with comprehensive information on how to create and work with Stencil components effectively.
+
+
+
+
+
+<!-- Auto Generated Below -->
+
+
+## Properties
+
+| Property    | Attribute    | Description | Type               | Default     |
+| ----------- | ------------ | ----------- | ------------------ | ----------- |
+| `arrayData` | `array-data` |             | `Item[] \| string` | `undefined` |
+
+
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*
+
+
+
+
 [![Built With Stencil](https://img.shields.io/badge/-Built%20With%20Stencil-16161d.svg?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI%2BCjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI%2BCgkuc3Qwe2ZpbGw6I0ZGRkZGRjt9Cjwvc3R5bGU%2BCjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik00MjQuNywzNzMuOWMwLDM3LjYtNTUuMSw2OC42LTkyLjcsNjguNkgxODAuNGMtMzcuOSwwLTkyLjctMzAuNy05Mi43LTY4LjZ2LTMuNmgzMzYuOVYzNzMuOXoiLz4KPHBhdGggY2xhc3M9InN0MCIgZD0iTTQyNC43LDI5Mi4xSDE4MC40Yy0zNy42LDAtOTIuNy0zMS05Mi43LTY4LjZ2LTMuNkgzMzJjMzcuNiwwLDkyLjcsMzEsOTIuNyw2OC42VjI5Mi4xeiIvPgo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNDI0LjcsMTQxLjdIODcuN3YtMy42YzAtMzcuNiw1NC44LTY4LjYsOTIuNy02OC42SDMzMmMzNy45LDAsOTIuNywzMC43LDkyLjcsNjguNlYxNDEuN3oiLz4KPC9zdmc%2BCg%3D%3D&colorA=16161d&style=flat-square)](https://stenciljs.com)
 
 # Stencil Component Starter
