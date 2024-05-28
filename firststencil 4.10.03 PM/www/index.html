@@ -1,6 +1,4 @@
-<!doctype html><html dir="ltr" lang="en"><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"> <title>Stencil Component Starter</title> <link rel="modulepreload" href="/build/p-66bed989.js"><script type="module" data-stencil data-resources-url="/build/" data-stencil-namespace="firststencil">import{p as a,b as r}from"/build/p-66bed989.js";export{s as setNonce}from"/build/p-66bed989.js";import{g as t}from"/build/p-e1255160.js";var e=()=>{const r=import.meta.url;const t={};if(r!==""){t.resourcesUrl=new URL(".",r).href}return a(t)};e().then((async a=>{await t();return r([["p-400bf05c",[[1,"ey-items-card",{arrayData:[1,"array-data"]},null,{arrayData:["arrayDataWatcher"]}]]]],a)}));
-//# sourceMappingURL=firststencil.esm.js.map
-</script> <script nomodule="" src="/build/firststencil.js" data-stencil></script> </head> <body> <!-- <ey-side-drawer items='[
+<!doctype html><html dir="ltr" lang="en"><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"> <title>Stencil Component Starter</title> <script type="module" src="/build/firststencil.esm.js" data-stencil></script> <script nomodule="" src="/build/firststencil.js" data-stencil></script> </head> <body> <!-- <ey-side-drawer items='[
   {
     "id": "1",
     "label": "Item 1",
@@ -52,4 +50,13 @@
     &quot;amount&quot;: 1650
   }      
 }
-]"></ey-items-card> </body></html>
+]"></ey-items-card> <script>
+if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+  // auto-unregister service worker during dev mode
+  navigator.serviceWorker.getRegistration().then(function(registration) {
+    if (registration) {
+      registration.unregister().then(function() { location.reload(true) });
+    }
+  });
+}
+</script></body></html>

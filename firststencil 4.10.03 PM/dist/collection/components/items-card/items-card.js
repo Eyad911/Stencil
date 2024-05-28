@@ -1,21 +1,31 @@
 import { h } from "@stencil/core";
 export class ItemsCard {
     constructor() {
+        this._arrayData = [];
         this.arrayData = undefined;
     }
     arrayDataWatcher(newValue) {
         if (typeof newValue === 'string') {
-            this._arrayData = JSON.parse(newValue);
+            try {
+                this._arrayData = JSON.parse(newValue) || [];
+            }
+            catch (error) {
+                // console.error('Invalid JSON string provided for arrayData', error);
+                this._arrayData = [];
+            }
+        }
+        else if (Array.isArray(newValue)) {
+            this._arrayData = newValue;
         }
         else {
-            this._arrayData = newValue;
+            this._arrayData = [];
         }
     }
     componentWillLoad() {
         this.arrayDataWatcher(this.arrayData);
     }
     render() {
-        return (h("div", { key: '32b7e5c242fc14b5ad71bcee7de371e4133bfc35', class: "w-full  px-[8px] bg-[#baf3e6] bg-opacity-10 border-[2px] border-[#BAF3E626] rounded-[6px]" }, this._arrayData.map((item, index) => (h("div", { key: index, class: "py-[10px] " }, h("div", { class: "flex space-x-8  " }, h("div", { class: "flex space-x-3 " }, h("img", { src: item.thumbnail, class: "w-[45px] h-[45px] rounded-[22.5px] ", alt: item.label }), h("div", { class: " w-[225px] " }, h("p", { class: " text-[#004d5a] font-normal text-xs/[16px] underline " }, item.label), h("p", { class: " mt-[4px] text-[#999999] opacity-90 text-[10px]/[16px] space-x-1" }, item.price.currency, " ", item.price.amount))), h("div", { class: "flex justify-between  text-[#333333] text-xs/[16px] font-bold w-full items-center  p-2 " }, h("p", null, " ", item.qty.toString()), h("p", null, item.price.currency, " ", item.price.amount.toFixed(2)))), index !== this._arrayData.length - 1 && (h("div", { style: {
+        return (h("div", { key: 'e5578aa4b7527696afd2048d9859c38079d3e15e', class: "w-full px-[8px] bg-[#baf3e6] bg-opacity-10 border-[2px] border-[#BAF3E626] rounded-[6px]" }, this._arrayData.map((item, index) => (h("div", { key: index, class: "py-[10px]" }, h("div", { class: "flex space-x-8" }, h("div", { class: "flex space-x-3" }, h("img", { src: item.thumbnail, class: "w-[45px] h-[45px] rounded-[22.5px]", alt: item.label }), h("div", { class: "w-[225px]" }, h("p", { class: "text-[#004d5a] font-normal text-xs/[16px] underline" }, item.label), h("p", { class: "mt-[4px] text-[#999999] opacity-90 text-[10px]/[16px] space-x-1" }, item.price.currency, " ", item.price.amount))), h("div", { class: "flex justify-between text-[#333333] text-xs/[16px] font-bold w-full items-center p-2" }, h("p", null, item.qty.toString()), h("p", null, item.price.currency, " ", item.price.amount.toFixed(2)))), index !== this._arrayData.length - 1 && (h("div", { style: {
                 borderTop: '2px solid rgba(186, 243, 230, 1)',
                 marginTop: '20px',
             } })))))));

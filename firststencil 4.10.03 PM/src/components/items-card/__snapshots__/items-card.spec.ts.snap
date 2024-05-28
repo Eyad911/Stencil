@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ey-items-card should render correctly with arrayData as a string 1`] = `
+<ey-items-card>
+  <mock:shadow-root>
+    <div class="bg-[#baf3e6] bg-opacity-10 border-[#BAF3E626] border-[2px] px-[8px] rounded-[6px] w-full">
+      <div class="py-[10px]">
+        <div class="flex space-x-8">
+          <div class="flex space-x-3">
+            <img alt="Item 1" class="h-[45px] rounded-[22.5px] w-[45px]" src="https://via.placeholder.com/45">
+            <div class="w-[225px]">
+              <p class="font-normal text-[#004d5a] text-xs/[16px] underline">
+                Item 1
+              </p>
+              <p class="mt-[4px] opacity-90 space-x-1 text-[#999999] text-[10px]/[16px]">
+                USD 12.5
+              </p>
+            </div>
+          </div>
+          <div class="flex font-bold items-center justify-between p-2 text-[#333333] text-xs/[16px] w-full">
+            <p>
+              2
+            </p>
+            <p>
+              USD 12.50
+            </p>
+          </div>
+        </div>
+        <div style="border-top: 2px solid rgba(186, 243, 230, 1); margin-top: 20px;"></div>
+      </div>
+      <div class="py-[10px]">
+        <div class="flex space-x-8">
+          <div class="flex space-x-3">
+            <img alt="Item 2" class="h-[45px] rounded-[22.5px] w-[45px]" src="https://via.placeholder.com/45">
+            <div class="w-[225px]">
+              <p class="font-normal text-[#004d5a] text-xs/[16px] underline">
+                Item 2
+              </p>
+              <p class="mt-[4px] opacity-90 space-x-1 text-[#999999] text-[10px]/[16px]">
+                USD 23.99
+              </p>
+            </div>
+          </div>
+          <div class="flex font-bold items-center justify-between p-2 text-[#333333] text-xs/[16px] w-full">
+            <p>
+              1
+            </p>
+            <p>
+              USD 23.99
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</ey-items-card>
+`;
+
+exports[`ey-items-card should render correctly with arrayData as an object 1`] = `
+<ey-items-card>
+  <mock:shadow-root>
+    <div class="bg-[#baf3e6] bg-opacity-10 border-[#BAF3E626] border-[2px] px-[8px] rounded-[6px] w-full">
+      <div class="py-[10px]">
+        <div class="flex space-x-8">
+          <div class="flex space-x-3">
+            <img alt="Item 1" class="h-[45px] rounded-[22.5px] w-[45px]" src="https://via.placeholder.com/45">
+            <div class="w-[225px]">
+              <p class="font-normal text-[#004d5a] text-xs/[16px] underline">
+                Item 1
+              </p>
+              <p class="mt-[4px] opacity-90 space-x-1 text-[#999999] text-[10px]/[16px]">
+                USD 12.5
+              </p>
+            </div>
+          </div>
+          <div class="flex font-bold items-center justify-between p-2 text-[#333333] text-xs/[16px] w-full">
+            <p>
+              2
+            </p>
+            <p>
+              USD 12.50
+            </p>
+          </div>
+        </div>
+        <div style="border-top: 2px solid rgba(186, 243, 230, 1); margin-top: 20px;"></div>
+      </div>
+      <div class="py-[10px]">
+        <div class="flex space-x-8">
+          <div class="flex space-x-3">
+            <img alt="Item 2" class="h-[45px] rounded-[22.5px] w-[45px]" src="https://via.placeholder.com/45">
+            <div class="w-[225px]">
+              <p class="font-normal text-[#004d5a] text-xs/[16px] underline">
+                Item 2
+              </p>
+              <p class="mt-[4px] opacity-90 space-x-1 text-[#999999] text-[10px]/[16px]">
+                USD 23.99
+              </p>
+            </div>
+          </div>
+          <div class="flex font-bold items-center justify-between p-2 text-[#333333] text-xs/[16px] w-full">
+            <p>
+              1
+            </p>
+            <p>
+              USD 23.99
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</ey-items-card>
+`;
